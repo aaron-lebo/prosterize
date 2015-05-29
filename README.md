@@ -1,5 +1,5 @@
 # prosterize
-proseter = prose ter = a poster made of text + an image
+prosterize = prose terize = make a poster from text + an image
 
 ## usage
 
