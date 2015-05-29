@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 img = Image.open(argv[1])
 size = int(argv[2])
 
-# create a new image with the same size as the original
+# create a new image that is the same size as the original
 out = Image.new('RGB', img.size, 'white')
 font = ImageFont.truetype('Inconsolata-Bold.ttf', size)
 draw = ImageDraw.Draw(out)
