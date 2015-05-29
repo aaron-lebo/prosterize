@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 img = Image.open(argv[1])
 text_path = argv[2]
 out_path = argv[3]
-font_path = arg[4]
+font_path = argv[4]
 font_size = int(argv[5])
 
 file = open(text_path, 'rb')
