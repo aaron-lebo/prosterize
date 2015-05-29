@@ -25,7 +25,7 @@ while cont:
         # determine the bounding box of the next letter without drawing it
         width, height = draw.textsize(letter, font=font)
         # determine what the most prominent color is within that bounding box on the original image
-        part = img.crop((x, y + height, x + width, y + height + size))
+        part = img.crop((x, y + height, x + width, y + height + font_size))
         colors = part.getcolors()
         # draw it with that color on the new image
         draw.text((x, y), letter, colors[0][1] if colors else (0, 0, 0), font=font)
