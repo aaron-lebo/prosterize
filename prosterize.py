@@ -29,7 +29,7 @@ while cont:
         colors = part.getcolors()
         # draw it with that color on the new image
         draw.text((x, y), letter, colors[0][1] if colors else (0, 0, 0), font=font)
-        # adjust coords, jump to next lines, and eventually quit
+        # adjust coords, jump to next line, and eventually quit
     	x += width
         if x > img.size[0]:
             x = 0
