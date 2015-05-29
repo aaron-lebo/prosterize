@@ -22,7 +22,7 @@ while cont:
         part = img.crop((x, y + height, x + width, y + height + size))
         colors = part.getcolors()
         # draw it with that color on the new image
-        draw.text((x, y), letter, colors[0][1] if colors else (0, 0, 0,), font=font)
+        draw.text((x, y), letter, colors[0][1] if colors else (0, 0, 0), font=font)
         # adjust coords, jump to next lines, and eventually quit
     	x += width
         if x > img.size[0]:
