@@ -3,19 +3,25 @@ from sys import argv
 from PIL import Image, ImageDraw, ImageFont 
 
 img = Image.open(argv[1])
-size = int(argv[2])
+text_path = argv[2]
+out_path = argv[3]
+font_path = arg[4]
+font_size = int(argv[5])
+
+file = open(text_path, 'rb')
+text = ' '.join(file.read().replace('\r\n', ' ').split())
+file.close()
 
 # create a new image that is the same size as the original
 out = Image.new('RGB', img.size, 'white')
-font = ImageFont.truetype('Inconsolata-Bold.ttf', size)
+font = ImageFont.truetype(font_path, font_size)
 draw = ImageDraw.Draw(out)
 cont = True
-letters = ' '.join(open('speech.txt', 'rb').read().replace('\r\n', ' ').split())
 x, y = 0, 0
 
 # repeat text until we are completely out of space on the image
 while cont:
-    for letter in letters:
+    for letter in text:
         # determine the bounding box of the next letter without drawing it
         width, height = draw.textsize(letter, font=font)
         # determine what the most prominent color is within that bounding box on the original image
@@ -27,8 +33,8 @@ while cont:
     	x += width
         if x > img.size[0]:
             x = 0
-            y += size 
+            y += font_size 
         if y > img.size[1]:
             cont = False
 
-out.save('out.jpg')
+out.save(out_path)
