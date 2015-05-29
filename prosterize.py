@@ -1,6 +1,6 @@
 from sys import argv 
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont 
+from PIL import Image, ImageDraw, ImageFont 
 
 img = Image.open(argv[1])
 size = int(argv[2])
