@@ -9,7 +9,7 @@ font_path = argv[4]
 font_size = int(argv[5])
 
 file = open(text_path, 'rb')
-text = ' '.join(file.read().replace('\r\n', ' ').split())
+text = ' '.join(file.read().replace('\n', ' ').replace('\r\n', ' ').split())
 file.close()
 
 # create a new image that is the same size as the original
